@@ -1,0 +1,59 @@
+{include file="base/head"/}
+<script src="__WEUI__/js/swipe.js"></script>
+{:swiper(1)}
+<style>
+    center{
+        text-align: center;
+    }
+    .weui-grid:before {
+        border:none !important;
+    }
+</style>
+<div class="weui-grids" style="background: white;">
+    <a href="" class="weui-grid js_grid" style="text-align: center">
+            <img src="{:advUrl(2)}" style="width: 60%;" alt="">
+        <p class="weui-grid__label">
+            在线预约
+        </p>
+    </a>
+    <a href="" class="weui-grid js_grid " style="text-align: center">
+
+        <img src="{:advUrl(3)}" style="width: 60%;margin: 0 auto;" alt="">
+        <p class="weui-grid__label">
+            案例展示
+        </p>
+    </a>
+    <a href="" class="weui-grid js_grid" style="text-align: center">
+
+        <img src="{:advUrl(4)}" style="width: 60%;" alt="">
+        <p class="weui-grid__label">
+            摄影师
+        </p>
+        
+    </a>
+
+</div>
+<div class="weui-panel weui-panel_access" style=" margin-top: -1px;">
+    <div class="weui-panel__hd">在线预约</div>
+    <div class="weui-panel__bd">
+        {volist name="appointment" id='vo'}
+        <a href="{:url('goods/detail')}?id={$vo['id']}" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="{:img($vo['img'])}">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">{$vo['goodsname']}</h4>
+                <p class="weui-media-box__desc">{$vo['desc']}</p>
+            </div>
+        </a>
+        {/volist}
+
+    </div>
+    <div class="weui-panel__ft">
+        <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
+            <div class="weui-cell__bd">查看更多</div>
+            <span class="weui-cell__ft"></span>
+        </a>
+    </div>
+</div>
+{include file="base/foot"/}
