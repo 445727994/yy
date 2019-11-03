@@ -19,9 +19,11 @@ class UserCase extends Base{
     }
     public function _end_search(&$list) {
         if (count($list['data']) > 0) {
-            foreach ($list['data'] as $key => $value) {
-                $list['data'][$key]['img'] = img($value['img']);
-                $list['data'][$key]['cate'] = caseCate($value['cate_id']);
+
+            foreach ($list['data'] as $key => &$value) {
+                $value['img'] = img($value['img']);
+                $value['cate_id']= caseCate($value['cate_id']);
+                $value['camera_id']=cameraName($value['camera_id']);
             }
         }
     }

@@ -6,32 +6,34 @@
 -->
 <div class="weui-tab tab-bottom " style="height:2.7rem;" data-now="0">
 	<div class="weui-tabbar">
-		<a href="{:url('index')}" class="weui-tabbar__item"  >
+		<a href="{:url('index/index')}" class="weui-tabbar__item"  >
 			<i class="icon icon-27 f27 weui-tabbar__icon"></i>
 			<p class="weui-tabbar__label">首页</p>
 		</a>
-		<a href="{:url('case')}?status=0" class="weui-tabbar__item" >
+		<a href="{:url('userCase/index')}?status=0" class="weui-tabbar__item" >
 			<i class="icon icon-67 f27 weui-tabbar__icon"></i>
 			<p class="weui-tabbar__label">案例</p>
 		</a>
-		<a href="{:url('order')}" class="weui-tabbar__item" >
+		<a href="{:url('camera/index')}" class="weui-tabbar__item" >
           <!--  <span style="display: inline-block;position: relative;">
                 <i class="icon icon-4 f27 weui-tabbar__icon"></i>
                 <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
             </span>-->
-            <i class="icon icon-24 f27 weui-tabbar__icon"></i>
-            <p class="weui-tabbar__label">订单</p>
+            <i class="icon icon-61 f27 weui-tabbar__icon"></i>
+            <p class="weui-tabbar__label">
+				摄影师
+			</p>
         </a>
-        <a href="{:url('user')}" class="weui-tabbar__item ">
+        <a href="{:url('user/index')}" class="weui-tabbar__item ">
         	<i class="icon icon-99 f27 weui-tabbar__icon" ></i>
         	<p class="weui-tabbar__label">个人中心</p> <!--  f-green> -->
         </a>
     </div>
 </div>
+</body>
+</html>
 <script>
 	$(function(){
 		$('.weui-tabbar__item').eq({$check}).addClass('weui-bar__item_on');
 	})
 </script>
-</body>
-</html>

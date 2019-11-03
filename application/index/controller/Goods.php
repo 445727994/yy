@@ -3,21 +3,20 @@
 namespace app\index\controller;
 
 use app\admin\model\Cate;
-use app\admin\model\Order;
-use app\admin\model\UserCase as C;
-use think\Db;
+use app\admin\model\Form;
+use app\admin\model\goods as C;
 
-class userCase extends Base
+class Goods extends Base
 {
 
     public function index()
     {
-        $this->webtitle('用户案例');
+        $this->webtitle('在线预约');
         $cate = input('cate', 0);
         if (request()->isAjax()) {
             $where[] = ['is_show', '=', 0];
-            if($cate!=0){
-                $where[]=['cate_id','=',$cate];
+            if ($cate != 0) {
+                $where[] = ['cate_id', '=', $cate];
             }
             $page = (int)input('page') ? (int)input('page') : 1;
             $page_size = (int)input('limit') ? (int)input('limit') : 10;
@@ -27,28 +26,42 @@ class userCase extends Base
             foreach ($data as &$v) {
                 $v['img'] = img($v['img']);
                 $v['src'] = $url . $v['id'];
+                $v['desc']=str_replace(["\r\n","\n"], "<br>", str_replace(" ", " ", $v['desc']));
             }
-            $count = C::where($where)->cache('camera_count_'.$cate, 1000)->count();
+            $count = C::where($where)->cache('camera_count_' . $cate, 1000)->count();
             return $this->return_data($data, $count);
         }
-        $cateList=Cate::where('is_delete',0)->cache('cate_all',6000)->order('sort desc')->select();
-        $this->assign('cateList',$cateList);
+        $cateList = Cate::where('is_delete', 0)->cache('cate_all', 6000)->order('sort desc')->select();
+        $this->assign('cateList', $cateList);
         return $this->fetch();
     }
 
 
     public function detail()
     {
-        $this->webtitle('案例详情');
+        $this->webtitle('摄影师详情');
         $id = input('id');
         if ($id) {
             $data = C::where('id', $id)->where('is_show', 0)->cache('userCase_detail_' . $id, 3600)->find();
         } else {
             $data = C::order('sort desc')->cache('camera_default', 3600)->find();
         }
-        $this->assign('userCase', $data);
+        $this->assign('goods', $data);
         return $this->fetch();
     }
 
-
+    public function appointment()
+    {
+        $this->webtitle('预约');
+        $id = input('id');
+        if(!$id){
+            $this->redirect('goods/index');
+            return;
+        }
+        $data = C::where('id', $id)->where('is_show', 0)->cache('userCase_detail_' . $id, 3600)->find();
+        $field=Form::find($data['form_id']);
+        $this->assign('goods',$data);
+        $this->assign('field',json_decode($field['content'],true));
+        return $this->fetch();
+    }
 }

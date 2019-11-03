@@ -11,6 +11,14 @@
         <input type="input" name="price" class="layui-input" lay-verify="require" value="{$info.price}">
     </div>
 </div>
+
+<div class="layui-form-item">
+    <label class="layui-form-label">分类</label>
+    <div class="layui-input-block">
+        <select name="cate_id" lay-verify="">
+            {:select_option("eyJ3aGVyZSI6ImlzX2RlbGV0ZT0wIiwidGFibGUiOiJjYXRlIiwib3JkZXIiOiJpZCBkZXNjIiwiZmllbGQxIjoiaWQiLCJmaWVsZDIiOiJuYW1lIn0=",$info["cate_id"])}</select>
+    </div>
+</div>
 <div class="layui-form-item">
     <label class="layui-form-label">封面图</label>
     <div class="layui-input-block">
@@ -49,6 +57,7 @@
 
     </div>
 </div>
+
 <div class="layui-form-item">
     <label class="layui-form-label">自定义字段模板</label>
     <div class="layui-input-block">

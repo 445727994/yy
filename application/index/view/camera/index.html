@@ -1,0 +1,54 @@
+{include file="base/head"/}
+<style type="text/css">
+    body{
+        height: auto;
+    }
+    #LAY_demo1 li{
+        width: 48%;
+        margin: 1%;
+        display: inline-block;
+    }
+</style>
+<!--<div class="weui-navbar">-->
+<!--    <div class="weui-navbar__item">-->
+<!--        {$title}-->
+<!--    </div>-->
+<!--</div>-->
+<div class="page">
+<fieldset class="layui-elem-field layui-field-title"  style="margin: 0">
+</fieldset>
+<ul class="flow-default" id="LAY_demo1"></ul>
+</div>
+<script>
+    layui.use('flow', function(){
+        var page=1;
+        var pageSize=10;
+        var pageCount=1;
+        var flow = layui.flow;
+        flow.load({
+            elem: '#LAY_demo1' //流加载容器
+            ,done: function(page, next){ //执行下一页的回调
+                ajaxYhc('POST','{:url("index")}',{page:page},function(result){
+                    if(result.code==0){
+                        page+=1;
+                        pageCount=Math.ceil(result.count/pageSize);
+                        //$.toast(result.msg,'text');
+                        var lis = [];
+                        var length=result.data.length;
+                        for(var i = 0; i < length; i++){
+                            lis.push('<li> <a href="'+result.data[i]['src']+'">'+ result.data[i]['img'] +'</a></li>')
+                        }
+                        //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                        //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                        next(lis.join(''), page < pageCount+1); //假设总页数为 10
+                    }else{
+                        $.toast('暂无数据','text');
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+
+{include file="base/foot"/}

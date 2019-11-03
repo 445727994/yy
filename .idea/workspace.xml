@@ -2,18 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46a1fc7-1e28-4b97-8857-17f358801b4b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/application/index/controller/Camera.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/index/controller/Goods.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/index/view/camera/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/index/view/camera/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/index/view/goods/appointment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/index/view/goods/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/index/view/goods/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/index/view/user_case/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/index/view/user_case/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/camera/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/camera/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/camera/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/camera/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/Adv.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Adv.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/Base.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Base.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/Goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Goods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/UserCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/UserCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/adv/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/adv/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/adv/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/adv/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/base/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/base/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/camera/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/camera/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin/view/goods/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/goods/add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin/view/goods/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/goods/edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin/view/goods/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/goods/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/user_case/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/user_case/add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin/view/user_case/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/user_case/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/user_case/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/user_case/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/common.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/controller/Base.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Base.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/UserCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/UserCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/base/foot.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/base/foot.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/view/base/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/base/head.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/view/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/index/text.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/index/text.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/user/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,14 +49,22 @@
       <executable />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RN6RcvoAiasNzuXP8hLafqOSBf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ls" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -76,7 +106,10 @@
       <workItem from="1572265581497" duration="1157000" />
       <workItem from="1572273463187" duration="122000" />
       <workItem from="1572444672497" duration="4426000" />
-      <workItem from="1572527213193" duration="9220000" />
+      <workItem from="1572527213193" duration="9847000" />
+      <workItem from="1572613185628" duration="1869000" />
+      <workItem from="1572689614797" duration="17233000" />
+      <workItem from="1572744665388" duration="22705000" />
     </task>
     <servers />
   </component>

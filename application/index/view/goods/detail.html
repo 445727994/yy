@@ -1,0 +1,54 @@
+{include file="base/head"/}
+
+
+<div class="page">
+    <!--    <div class="weui-navbar">-->
+    <!--        <div class="weui-navbar__item">-->
+    <!--            {$title}-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <div class="page-hd">
+        <div class="weui-form">
+            <div class="weui-form__text-area">
+                <h2 class="weui-form__title">{$goods.goodsname}</h2>
+            </div>
+            <div class="weui-form__control-area">
+                <div class="weui-cells__group weui-cells__group_form">
+                    <div class="weui-cells weui-cells_form">
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd"><label class="weui-label">价格</label></div>
+                            <div class="weui-cell__bd">
+                                <input class="weui-input" placeholder="" value="{$goods.price}" disabled>
+                            </div>
+                        </div>
+                        <div class="weui-cell">包含内容</div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <textarea class="weui-textarea" placeholder="" rows="3" disabled>{$goods.desc}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="weui-cells__title">详情介绍</div>
+    <div class="page-bd padding5" >
+        <article class="weui-article f14" style="line-height: 1.5rem;">
+            <section style="text-indent: 2em">
+                {$goods.content}
+            </section>
+        </article>
+    </div>
+</div>
+<div class="weui-tab tab-bottom " style="height:2.7rem;" data-now="0">
+    <div class="weui-tabbar">
+        <a href="{:url('goods/appointment')}?id={$goods.id}" class="weui-tabbar__item"  >
+            <p class="weui-tabbar__label"  style="color:green;">去预约</p>
+            <i class="icon icon-41 f27 weui-tabbar__icon"  style="color:green;"></i>
+        </a>
+    </div>
+</div>
+</body>
+</html>

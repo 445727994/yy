@@ -8,6 +8,10 @@ class Index extends Base {
 
 	public function index() {
 		$appointment=Db::name('goods')->where(['is_show'=>0])->order('sort desc')->limit(3)->select();
+		$cameras=Db::name("camera")->where(['is_show'=>0])->order('sort desc')->limit(10)->select();
+		$userCase=Db::name('user_case')->where(['is_show'=>0])->order('sort desc')->limit(10)->select();
+		$this->assign('cameras',$cameras);
+		$this->assign('userCase',$userCase);
 		$this->webtitle('商品列表');
 		$this->assign('appointment',$appointment);
 		return $this->fetch();

@@ -1,0 +1,26 @@
+{include file="base/head"/}
+
+
+<div class="page">
+    <!--    <div class="weui-navbar">-->
+    <!--        <div class="weui-navbar__item">-->
+    <!--            {$title}-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <div class="page-hd">
+        <h1 class="page-hd-title">
+            {$userCase.title}
+        </h1>
+        <p class="page-hd-desc" style="display: inline-block">摄影师:{:camera($userCase['camera_id'])}</p>
+        <p class="page-hd-desc" style="display: inline-block; float: right">分类:{:cate($userCase['cate_id'])}</p>
+        <p class="page-hd-desc"> {$userCase.desc}</p>
+    </div>
+    <div class="page-bd padding5" >
+        <article class="weui-article f14" style="line-height: 1.5rem;">
+            <section style="text-indent: 2em">
+                {$userCase.content}
+            </section>
+        </article>
+    </div>
+</div>
+{include file="base/foot"/}

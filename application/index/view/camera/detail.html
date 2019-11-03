@@ -1,0 +1,44 @@
+{include file="base/head"/}
+<style>
+    .weui-cell:before {
+        z-index: 0;
+    }
+</style>
+
+<div class="page">
+<!--    <div class="weui-navbar">-->
+<!--        <div class="weui-navbar__item">-->
+<!--            {$title}-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="page-hd">
+        <h1 class="page-hd-title">
+            {$camera.name}
+        </h1>
+        <p class="page-hd-desc"> {$camera.desc}</p>
+        <p class="page-hd-desc"> {$camera.desc}</p>
+    </div>
+    <div class="page-bd padding5" >
+        <article class="weui-article f14" style="line-height: 1.5rem;">
+            <section style="text-indent: 2em">
+                {$camera.content}
+            </section>
+        </article>
+    </div>
+    <div class="weui-cells__title">摄影师其他案例</div>
+    <div class="weui-cells">
+
+        {volist name='cameraCase' id='vo'}
+        <a class="weui-cell weui-cell_access" href="{:url('userCase/detail')}?id={$vo.id}">
+            <div class="weui-cell__bd">
+                <p>{$vo.title}</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+        </a>
+        {/volist}
+    </div>
+</div>
+
+
+{include file="base/foot"/}

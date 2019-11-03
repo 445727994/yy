@@ -19,7 +19,7 @@ class Base extends Controller {
 		header("Content-type:text/html;charset=utf8");
 		$cache_key = request()->module() . "/" . request()->controller();
 		if (empty(cache("lang"))) {
-			cache("lang", (include EXTEND_PATH . "/lang/" . request()->module() . "/Base.php"));
+			cache("lang", (include EXTEND_PATH . "/lang/" . request()->module() . "/base.php"));
 		}
 		$this->Lang = Cache("lang");
 		if (!session("user_info")) {
@@ -30,7 +30,7 @@ class Base extends Controller {
 		//$url = request()->module() . "/" . lcfirst(request()->controller()) . '/' . request()->action();
 
 		if (empty(cache("lang_" . request()->controller()))) {
-			$lang_controller = include EXTEND_PATH . "/lang/" . request()->module() . "/" . request()->controller() . ".php";
+			$lang_controller = include EXTEND_PATH . "/lang/" . request()->module() . "/" . strtolower( request()->controller()) . ".php";
 			cache("lang_" . request()->controller(), $lang_controller);
 		}
 		if (empty(cache("webconfig"))) {
@@ -82,7 +82,6 @@ class Base extends Controller {
 					} else if (strpos($value['name'], 'time_start')) {
 						$where[] = [rtrim($value['name'], '_start'), '>', strtotime($value['value'])];
 					} else if (strpos($value['name'], 'time_end')) {
-
 						$where[] = [substr($value['name'], 0, -4), '<', strtotime($value['value'])];
 					} else if (strpos($value['name'], 'time_between')) {
 						$where[] = [substr($value['name'], 0, -8), 'between', strtotime($value['value']) . ',' . (strtotime($value['value']) + 24 * 3600)];

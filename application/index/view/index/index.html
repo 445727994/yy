@@ -1,59 +1,161 @@
 {include file="base/head"/}
 <script src="__WEUI__/js/swipe.js"></script>
-{:swiper(1)}
+<script src="__WEUI__//js/iscroll-lite.js"></script>
+
 <style>
-    center{
+    center {
         text-align: center;
     }
+
     .weui-grid:before {
-        border:none !important;
+        border: none !important;
+    }
+
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    .weui-navigator-list li.weui-state-hover, .weui-navigator-list li.weui-state-active a:after {
+        background-color: white;
+    }
+
+    #tagnav {
+        padding-bottom: .5rem;
+    }
+
+    #tagnav ul li {
+        width: 50%;
+    }
+
+    #tagnav ul li img {
+        width: 100%;
+    }
+    .weui-navigator.weui-navigator-wrapper {
+        z-index: 0;
     }
 </style>
-<div class="weui-grids" style="background: white;">
-    <a href="" class="weui-grid js_grid" style="text-align: center">
+<div class="page">
+    {:swiper(1)}
+    <div class="weui-grids" style="background: white;">
+        <a href="" class="weui-grid js_grid" style="text-align: center">
             <img src="{:advUrl(2)}" style="width: 60%;" alt="">
-        <p class="weui-grid__label">
-            在线预约
-        </p>
-    </a>
-    <a href="" class="weui-grid js_grid " style="text-align: center">
-
-        <img src="{:advUrl(3)}" style="width: 60%;margin: 0 auto;" alt="">
-        <p class="weui-grid__label">
-            案例展示
-        </p>
-    </a>
-    <a href="" class="weui-grid js_grid" style="text-align: center">
-
-        <img src="{:advUrl(4)}" style="width: 60%;" alt="">
-        <p class="weui-grid__label">
-            摄影师
-        </p>
-        
-    </a>
-
-</div>
-<div class="weui-panel weui-panel_access" style=" margin-top: -1px;">
-    <div class="weui-panel__hd">在线预约</div>
-    <div class="weui-panel__bd">
-        {volist name="appointment" id='vo'}
-        <a href="{:url('goods/detail')}?id={$vo['id']}" class="weui-media-box weui-media-box_appmsg">
-            <div class="weui-media-box__hd">
-                <img class="weui-media-box__thumb" src="{:img($vo['img'])}">
-            </div>
-            <div class="weui-media-box__bd">
-                <h4 class="weui-media-box__title">{$vo['goodsname']}</h4>
-                <p class="weui-media-box__desc">{$vo['desc']}</p>
-            </div>
+            <p class="weui-grid__label">
+                在线预约
+            </p>
         </a>
-        {/volist}
+        <a href="" class="weui-grid js_grid " style="text-align: center">
 
-    </div>
-    <div class="weui-panel__ft">
-        <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
-            <div class="weui-cell__bd">查看更多</div>
-            <span class="weui-cell__ft"></span>
+            <img src="{:advUrl(3)}" style="width: 60%;margin: 0 auto;" alt="">
+            <p class="weui-grid__label">
+                案例展示
+            </p>
+        </a>
+        <a href="" class="weui-grid js_grid" style="text-align: center">
+            <img src="{:advUrl(4)}" style="width: 60%;" alt="">
+            <p class="weui-grid__label">
+                摄影师
+            </p>
         </a>
     </div>
+    <div class="weui-panel weui-panel_access" style=" margin-top: -1px;">
+        <div class="weui-panel__hd">在线预约</div>
+        <div class="weui-panel__bd">
+            {volist name="appointment" id='vo'}
+            <a href="{:url('goods/detail')}?id={$vo['id']}" class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="{:img($vo['img'])}">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">{$vo['goodsname']}</h4>
+                    <p class="weui-media-box__desc">{$vo['desc']}</p>
+                </div>
+            </a>
+            {/volist}
+        </div>
+        <div class="weui-panel__ft">
+            <a href="{:url('goods/index')}" class="weui-cell weui-cell_access weui-cell_link">
+                <div class="weui-cell__bd">查看更多</div>
+                <span class="weui-cell__ft"></span>
+            </a>
+        </div>
+    </div>
+    <div id="tagnav" class="weui-navigator weui-navigator-wrapper" style="background: white">
+        <div class="weui-panel__hd">摄影师</div>
+        <ul class="weui-navigator-list">
+            {volist name ='cameras' id='vo'}
+            <li><a href="{:url('camera/detail')}?id={$vo['id']}"><img src="{:img($vo['img'])}"></a></li>
+            {/volist}
+        </ul>
+        <div class="weui-panel__ft">
+            <a href="{:url('camera/index')}" class="weui-cell weui-cell_access weui-cell_link">
+                <div class="weui-cell__bd">查看更多</div>
+                <span class="weui-cell__ft"></span>
+            </a>
+        </div>
+    </div>
+    <div class="weui-panel weui-panel_access" style=" margin-top: -1px;">
+        <div class="weui-panel__hd">用户案例</div>
+        <div class="weui-panel__bd">
+            {volist name="userCase" id='vo'}
+            <a href="{:url('userCase/detail')}?id={$vo['id']}" class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="{:img($vo['img'])}">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">{$vo['title']}</h4>
+                    <p class="weui-media-box__desc">{$vo['desc']}</p>
+                </div>
+            </a>
+            {/volist}
+        </div>
+        <div class="weui-panel__ft">
+            <a href="{:url('userCase/index')}" class="weui-cell weui-cell_access weui-cell_link">
+                <div class="weui-cell__bd">查看更多</div>
+                <span class="weui-cell__ft"></span>
+            </a>
+        </div>
+    </div>
+
 </div>
+<script>
+    TagNav('#tagnav', {
+        type: 'scrollToNext',
+        curClassName: 'weui-state-active',
+        index: 0
+    });
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
 {include file="base/foot"/}

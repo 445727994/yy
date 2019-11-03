@@ -41,6 +41,21 @@
     <a class="layui-btn layui-btn-xs" lay-event="edit">{$operate.edit}</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{$operate.del}</a>
 </script>
+<style type="text/css">
+    .laytable-cell-1-goods_img{
+        height: 100%;
+        max-width: 100%;
+    }
+    .layui-table-cell{
+        text-align: center;
+        height: 100px;
+        white-space:normal;
+    }
+    .table-img{
+        height: 100px;
+        width: 100px;
+    }
+</style>
 <script>
     layui.use('table', function () {
         var table = layui.table, form = layui.form;
@@ -48,7 +63,7 @@
             elem: '#demo'
             //   skin: 'line' //行边框风格
             /*      ,even: true //开启隔行背景*/
-            , size: 'sm' //小尺寸的表格
+            //, size: 'sm' //小尺寸的表格
             , url: '{:url("index")}'
             , cellMinWidth: 100 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
             , cols: [[
@@ -56,7 +71,7 @@
                 //遍历 替换这里
                 {field: 'name', title: '{$lang.field.name}', edit: 'text'},
                 {field: 'position', title: '{$lang.field.position}'},
-                {field: 'img', title: '{$lang.field.img}'},
+                {field:'img',  title: '{$lang.field.img}',templet:'#imgTpl'},
                 {field: 'src', title: '{$lang.field.src}'},
                 {field: 'create_time', title: '{$time.create}', sort: true, minWidth: 160},
                 {field: 'update_time', title: '{$time.update}', sort: true, minWidth: 160},

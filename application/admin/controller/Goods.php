@@ -17,5 +17,11 @@ class Goods extends Base{
     public function _befor_index(){
 
     }
-
+    public function _end_search(&$list) {
+        if (count($list['data']) > 0) {
+            foreach ($list['data'] as $key => &$value) {
+                $value['form_id'] = form($value['form_id']);
+            }
+        }
+    }
 }

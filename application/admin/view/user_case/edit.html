@@ -119,6 +119,7 @@
         });
         //监听提交 固定提交部分  编辑修改用
         form.on('submit(edit)', function (data) {
+            data.field.content=ue_editor.getContent();
             ajaxYhc('POST', '{:url("edit")}', data.field,
                 function (result) {
                     console.log(result);

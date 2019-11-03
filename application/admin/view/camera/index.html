@@ -70,7 +70,7 @@
                 }*/
               });
       form.on('switch(is_show)', function(obj){
-          var value=obj.elem.checked==false?0:1;
+          var value=obj.elem.checked==false?1:0;
           ajaxYhc('POST','{:url("field_edit")}',{id:this.value,field:this.name,value:value},function(result){layer.msg(result.msg);},function(result){layer.msg(result.msg)});
       });
         table.on('sort(test)', function(obj) { //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
