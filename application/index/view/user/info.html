@@ -1,0 +1,46 @@
+{include file="base/head"/}
+
+
+<div class="page">
+    <div class="toolbar weui-navbar">
+        <div class="toolbar-inner">
+            <h1 class="title">{$title}</h1>
+        </div>
+    </div>
+    <div class="page-hd">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">微信昵称</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" required   type="text" value="{$user.nickname}" disabled>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" required id="name" placeholder="请输入姓名" type="text" value="{$user.username}">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" required id="mobile" placeholder="请输入手机号" type="text" value="{$user.mobile}">
+            </div>
+        </div>
+        <div class="weui-pay">
+            <a href="javascript:;" id="sub" class="weui-btn weui-btn_primary">提交修改</a>
+        </div>
+    </div>
+</div>
+<script>
+    $('#sub').on('click',function () {
+        ajaxYhc('POST','{:url("info")}',{username:$('#name').val(),mobile:$('#mobile').val()},function(result) {
+            if(result.code==0){
+                $.toast('修改成功','text');
+            }else{
+                $.toast('修改失败，请稍后尝试','text');
+            }
+        });
+    })
+
+</script>
+{include file="base/foot"/}

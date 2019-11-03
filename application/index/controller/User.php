@@ -20,5 +20,18 @@ class User extends Base {
 		$this->assign('msg', $msg['about']);
 		return $this->fetch();
 	}
-
+    public function info(){
+        $this->webtitle('个人信息');
+        if (request()->isAjax()) {
+            $data['username']=input('username');
+            $data['mobile']=input('mobile');
+            \app\admin\model\User::where('id',$this->user['id'])->update($data);
+            $user=\app\admin\model\User::find(['id'=>$this->user['id']]);
+            session('user',$user);
+            return $this->return_msg('修改成功');
+        }
+	    $user=$this->user;
+	    $this->assign('user',$user);
+	    return $this->fetch();
+    }
 }

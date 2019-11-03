@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46a1fc7-1e28-4b97-8857-17f358801b4b" name="Default Changelist" comment="预约系统  除订单外开发">
+    <list default="true" id="f46a1fc7-1e28-4b97-8857-17f358801b4b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/application/index/view/user/info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/user/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +79,7 @@
       <workItem from="1572527213193" duration="9847000" />
       <workItem from="1572613185628" duration="1869000" />
       <workItem from="1572689614797" duration="17233000" />
-      <workItem from="1572744665388" duration="23662000" />
+      <workItem from="1572744665388" duration="27905000" />
     </task>
     <task id="LOCAL-00001" summary="预约系统  除订单外开发">
       <created>1572778428267</created>
@@ -92,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572778606088</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="预约系统  除订单外开发">
+      <created>1572779984503</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572779984503</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
