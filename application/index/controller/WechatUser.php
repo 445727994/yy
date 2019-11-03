@@ -1,7 +1,5 @@
 <?php
-
 namespace app\index\controller;
-
 use mikkle\tp_wechat\Wechat;
 use think\Controller;
 use think\Db;

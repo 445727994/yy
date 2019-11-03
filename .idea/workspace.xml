@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f46a1fc7-1e28-4b97-8857-17f358801b4b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Base.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Base.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/WechatUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/WechatUser.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +32,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ls" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sls" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -77,7 +77,7 @@
       <workItem from="1572527213193" duration="9847000" />
       <workItem from="1572613185628" duration="1869000" />
       <workItem from="1572689614797" duration="17233000" />
-      <workItem from="1572744665388" duration="28859000" />
+      <workItem from="1572744665388" duration="29229000" />
     </task>
     <task id="LOCAL-00001" summary="预约系统  除订单外开发">
       <created>1572778428267</created>
@@ -107,7 +107,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572790157516</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="去掉默认用户">
+      <created>1572791118955</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572791118955</updated>
+    </task>
+    <task id="LOCAL-00006" summary="去掉默认用户">
+      <created>1572791270436</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1572791270436</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +142,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="预约系统  除订单外开发" />
-    <option name="LAST_COMMIT_MESSAGE" value="预约系统  除订单外开发" />
+    <MESSAGE value="去掉默认用户" />
+    <option name="LAST_COMMIT_MESSAGE" value="去掉默认用户" />
   </component>
 </project>
