@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46a1fc7-1e28-4b97-8857-17f358801b4b" name="Default Changelist" comment="去掉默认用户">
-      <change afterPath="$PROJECT_DIR$/config/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/WechatUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/WechatUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.user.ini" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +32,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sls" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -79,7 +78,7 @@
       <workItem from="1572527213193" duration="9847000" />
       <workItem from="1572613185628" duration="1869000" />
       <workItem from="1572689614797" duration="17233000" />
-      <workItem from="1572744665388" duration="30209000" />
+      <workItem from="1572744665388" duration="30538000" />
     </task>
     <task id="LOCAL-00001" summary="预约系统  除订单外开发">
       <created>1572778428267</created>
@@ -137,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572791962273</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="去掉默认用户">
+      <created>1572792465729</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1572792465729</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
