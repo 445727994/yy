@@ -77,7 +77,7 @@
       <workItem from="1572527213193" duration="9847000" />
       <workItem from="1572613185628" duration="1869000" />
       <workItem from="1572689614797" duration="17233000" />
-      <workItem from="1572744665388" duration="29229000" />
+      <workItem from="1572744665388" duration="29708000" />
     </task>
     <task id="LOCAL-00001" summary="预约系统  除订单外开发">
       <created>1572778428267</created>
@@ -121,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572791270436</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="去掉默认用户">
+      <created>1572791486528</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1572791486528</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

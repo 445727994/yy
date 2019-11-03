@@ -41,13 +41,13 @@ class WechatUser extends Controller
             $openid = $data['openid'];
             $access_token = $data['access_token'];
             $userinfo = Wechat::Oauth()->getOauthUserInfo($access_token, $openid);
-            $data = ['openid' => $userinfo['openid'], 'wx_user' => $userinfo['nickname'], 'head_img' => $userinfo['headimgurl']];
+            $data = ['openid' => $userinfo['openid'], 'nickname' => $userinfo['nickname'], 'head_img' => $userinfo['headimgurl']];
             $is_user = Db::name("user")->where(['openid' => $userinfo['openid']])->find();
             if (!$is_user) {
                 Db::name("user")->insert($data);
                 session('user', Db::name("user")->where(['openid' => $userinfo['openid']])->find());
             } else {
-                Db::name("user")->where(['openid' => $userinfo['openid']])->update(['wx_user' => $userinfo['nickname'], 'head_img' => $userinfo['headimgurl']]);
+                Db::name("user")->where(['openid' => $userinfo['openid']])->update(['nickname' => $userinfo['nickname'], 'head_img' => $userinfo['headimgurl']]);
                 session('user', $is_user);
             }
             $this->redirect('binding');
