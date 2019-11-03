@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f46a1fc7-1e28-4b97-8857-17f358801b4b" name="Default Changelist" comment="去掉默认用户">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/.user.ini" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +77,7 @@
       <workItem from="1572527213193" duration="9847000" />
       <workItem from="1572613185628" duration="1869000" />
       <workItem from="1572689614797" duration="17233000" />
-      <workItem from="1572744665388" duration="30538000" />
+      <workItem from="1572744665388" duration="30827000" />
     </task>
     <task id="LOCAL-00001" summary="预约系统  除订单外开发">
       <created>1572778428267</created>
@@ -143,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572792465729</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="去掉默认用户">
+      <created>1572792796996</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572792796996</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
