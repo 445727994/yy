@@ -50,7 +50,7 @@ class WechatUser extends Controller
                 Db::name("user")->where(['openid' => $userinfo['openid']])->update(['nickname' => $userinfo['nickname'], 'head_img' => $userinfo['headimgurl']]);
                 session('user', $is_user);
             }
-            $this->redirect('index');
+            $this->redirect('index/index/index');
         } else {
             $return = $domain = request()->domain() . url('index');
             $url = Wechat::Oauth()->getOauthRedirect($return, '1');
