@@ -4,7 +4,7 @@ namespace app\index\controller;
 
 use app\admin\model\Cate;
 use app\admin\model\Form;
-use app\admin\model\goods as C;
+use app\admin\model\Goods as C;
 use think\db;
 class Goods extends Base
 {
