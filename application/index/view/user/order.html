@@ -1,0 +1,115 @@
+{include file="base/head"/}
+
+<!--<div class="weui-navbar">-->
+<!--    <div class="weui-navbar__item">-->
+<!--        {$title}-->
+<!--    </div>-->
+<!--</div>-->
+<style>
+    .weui-news-media {
+        width: 3rem;
+    }
+    #tagnav{
+        border-bottom: 1px #E9E7E7 solid;
+    }
+</style>
+<script src="__WEUI__/js/iscroll-lite.js"></script>
+<div class="page">
+    <div class="weui-panel weui-panel_access" style=" margin-top: -1px;">
+        <div class="weui-panel__bd" id="list">
+
+        </div>
+    </div>
+</div>
+<style>
+    .weui-news-infoitem {
+
+        font-size: .8rem !important;
+    }
+
+</style>
+<script type="text/html" id="goods">
+    {{#  layui.each(d, function(index, item){ }}
+    <a href="{:url('goods/detail')}?id={{item.goods_id}}" >
+        <li class="weui-news-item">
+            <div class="weui-news-inner">
+                <div class="weui-news-inners">
+
+                    <div class="weui-news-info">
+                        <div class="weui-news-infoitem" style="color: #0BB20C">
+                            {{ item.goodsname}}
+                        </div>
+                        <div class="weui-news-infoitem" style="color:red">¥{{ item.money }}</div>
+                    </div>
+                    <div class="weui-news-info">
+                        <div class="weui-news-infoitem" style="color: black">
+                           {{ item.order_no}}
+                        </div>
+                        <div class="weui-news-infoitem" style="color: red">{{ item.status }}</div>
+                    </div>
+                    <div class="weui-news-text">
+                        <div class="weui-news-title">订单内容：{{ item.goods_content}}</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </a>
+    <div class="weui-loadmore_line"></div>
+    <!--    <a href="{:url('goods/detail')}?id={{item.id}}" class="weui-media-box weui-media-box_appmsg">-->
+    <!--        <div class="weui-media-box__hd">-->
+    <!--            <img class="weui-media-box__thumb" src="{{ item.img }}">-->
+    <!--        </div>-->
+    <!--        <div class="weui-media-box__bd">-->
+    <!--            <h4 class="weui-media-box__title">{{ item.goodsname }}</h4>-->
+    <!--            <p class="weui-media-box__desc">{{ item.desc}}</p>-->
+    <!--        </div>-->
+    <!--    </a>-->
+    {{#  }) }}
+</script>
+<script>
+    var loading;
+    var page=1;
+    var pageSize=10;
+    var cate=0;
+    getList(page,pageSize,cate);
+    $(document).on('click','.cateChange',function () {
+        cate=$(this).data("id");
+        getList(page,pageSize,cate);
+    })
+    $(document.body).infinite().on("infinite", function() {
+        if(loading==true) return;
+        loading = true;
+        page = page + 1;
+        getList(page,pageSize,cate);
+        loading = false;
+    });
+    function getList(page,pageSize,cate) {
+        ajaxYhc('POST','{:url("order")}',{page:page,pageSize:pageSize,cate:cate},function(result) {
+            if(result.code==0){
+                var count=result.data.length;
+                if(count==0){
+                    if(page==1){
+                        document.getElementById('list').innerHTML='';
+                    }
+                    $.toast('没有更多了','text');
+                    return false;
+                }
+                layui.use('laytpl', function () {
+                    var laytpl = layui.laytpl;
+                    var getTpl = goods.innerHTML
+                        , view = document.getElementById('list');
+                    laytpl(getTpl).render(result.data, function (html) {
+                        if(page==1){
+                            view.innerHTML =html;
+                        }else{
+                            view.innerHTML = view.innerHTML + html;
+                        }
+                    });
+                });
+            }
+        });
+    }
+</script>
+
+
+{include file="base/foot"/}

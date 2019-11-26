@@ -24,6 +24,34 @@ function position($id){
 function form($id){
     return  Db::name('form')->where('id=' . $id)->cache('position_' . $id, '6000')->value('name');
 }
+function username($id){
+    return  Db::name('user')->where('id=' . $id)->cache('username_' . $id, '6000')->value('username');
+}
+function goodsname($id){
+    return  Db::name('goods')->where('id=' . $id)->cache('goodsname_' . $id, '6000')->value('goodsname');
+}
+function status($status){
+    switch ($status){
+        case 1:
+            $name='待付款';
+            break;
+        case 2:
+            $name='已付款';
+            break;
+        case 3:
+            $name='商家确认';
+            break;
+        case 4:
+            $name='交易完成';
+            break;
+        case 5:
+            $name='退款';
+            break;
+        default:
+            $name='待付款';
+    };
+    return $name;
+}
 function inputArray($array)
 {
     $html = '<div class="weui-cells weui-cells_form">';
@@ -34,8 +62,8 @@ function inputArray($array)
             <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">'.$v.$span.'</label></div>
                 <div class="weui-cell__bd">
-                  <input class="weui-input '.$require.'" name="field['.$k.']"  placeholder="请输入'.$v.'" value="" >
-                    <input  name="name['.$k.']" value="'.$v.'"  hidden>
+                  <input class="weui-input  diy-input '.$require.'" data-name="'.$v.'"  name="field['.$k.']"  placeholder="请输入'.$v.'" value="" >
+                    <input class="diy-name" name="name['.$k.']" value="'.$v.'"  hidden>
                 </div>
             </div>
             ';

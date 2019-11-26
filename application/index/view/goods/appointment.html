@@ -28,18 +28,42 @@
         </div>
     </div>
     <div class="page-hd">
+        <form  name="appoint" id="appoint">
         <div class="weui-cell">预约信息</div>
         <div class="weui-form">
+            <input name="goods_id" hidden value="{:input('id')}">
             {notempty name='field'}
-           {:inputArray($field)}
+            {:inputArray($field)}
             {/notempty}
         </div>
+        </form>
     </div>
 
     <div class="weui-pay">
-        <a href="javascript:;" class="weui-btn weui-btn_primary">立即预约</a>
+        <a href="javascript:;" id="sub" class="weui-btn weui-btn_primary">立即预约</a>
     </div>
 </div>
-
+<script>
+    $('#sub').on('click',function () {
+        var data=$('#appoint').serializeArray();
+        var end=false;
+        $('.require').each(function () {
+            var val=$(this).val();
+            if(val==''){
+                end=true;
+                $.toast('请填写'+$(this).data("name"),'text');
+            }
+        });
+        if(end==true)return false;
+        ajaxYhc('POST','{:url("order")}',data,function(result) {
+            if(result.code==0){
+                $.toast(result.msg,'text');
+                $('#sub').hide();
+            }else{
+                $.toast(result.msg,'text');
+            }
+        });
+    })
+</script>
 
 {include file="base/foot"/}

@@ -34,7 +34,8 @@
 </div>
 <div class="page page-bd">
     <div class="user">
-        <div class="userImg"></div>
+        <div class="userImg" style="width:100px;height:100px;border-radius:22px;background-image: url('{$user.head_img}');
+    background-size:100% 100%;"></div>
         <div class="ueseText">
             <h3>{$user.username}</h3>
                 <p></p>
@@ -50,6 +51,14 @@
 <!--                   我的订单-->
 <!--                </p>-->
 <!--            </a>-->
+               <a href="{:url('user/order')}" class="weui-grid js_grid">
+                   <div class="weui-grid__icon">
+                       <img src="__WEUI__/images/icon_nav_article.png" alt="">-->
+                   </div>
+                   <p class="weui-grid__label">
+                       我的订单
+                   </p>
+               </a>
                <a href="{:url('user/info')}" class="weui-grid js_grid">
                    <div class="weui-grid__icon">
                        <img src="__WEUI__/images/user.png" alt="">
@@ -64,6 +73,14 @@
                    </div>
                    <p class="weui-grid__label">
                        关于我们
+                   </p>
+               </a>
+               <a href="tel:{$webconfig['phone']}" class="weui-grid js_grid">
+                   <div class="weui-grid__icon">
+                       <span class="icon icon-104 f23" style="width: 28px;height: 28px;"></span>
+                   </div>
+                   <p class="weui-grid__label">
+                       联系客服
                    </p>
                </a>
 <!--   <a href="{:url('user/out')}" class="weui-grid js_grid">-->

@@ -21,13 +21,13 @@
     <div class="page-bd padding5" >
         <article class="weui-article f14" style="line-height: 1.5rem;">
             <section style="text-indent: 2em">
-                {$camera.content}
+                {$camera.content|raw}
             </section>
         </article>
     </div>
+    {notempty name='cameraCase'}
     <div class="weui-cells__title">摄影师其他案例</div>
     <div class="weui-cells">
-
         {volist name='cameraCase' id='vo'}
         <a class="weui-cell weui-cell_access" href="{:url('userCase/detail')}?id={$vo.id}">
             <div class="weui-cell__bd">
@@ -38,6 +38,7 @@
         </a>
         {/volist}
     </div>
+    {/notempty}
 </div>
 
 

@@ -34,4 +34,20 @@ class User extends Base {
 	    $this->assign('user',$user);
 	    return $this->fetch();
     }
+    public function  order(){
+	    if(request()->isAjax()){
+            $page = (int)input('page') ? (int)input('page') : 1;
+            $page_size = (int)input('limit') ? (int)input('limit') : 10;
+            $order=Db::name('order')->limit(($page - 1) * $page_size, $page_size)->select();
+            foreach ($order as $k=>&$v){
+                $v['goodsname']=goodsname($v['goods_id']);
+                $v['status']=status($v['status']);
+                $v['create_time']=date("Y-m-d H:i:s",$v['create_time']);
+            }
+            $count=Db::name('order')->where("user_id",$this->user['id'])->count();
+            return $this->return_data($order, $count);
+        }
+	    $this->webtitle('我的订单');
+	    return $this->fetch();
+    }
 }

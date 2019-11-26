@@ -5,7 +5,7 @@ namespace app\index\controller;
 use app\admin\model\Cate;
 use app\admin\model\Form;
 use app\admin\model\goods as C;
-
+use think\db;
 class Goods extends Base
 {
 
@@ -21,7 +21,7 @@ class Goods extends Base
             $page = (int)input('page') ? (int)input('page') : 1;
             $page_size = (int)input('limit') ? (int)input('limit') : 10;
             $order = 'sort desc';
-            $data = C::where($where)->limit(($page - 1) * $page_size, $page_size)->order($order)->cache('userCase_' . $page_size . '_' . $page . '_' . $cate, 1000)->select();
+            $data = C::where($where)->limit(($page - 1) * $page_size, $page_size)->order($order)->cache('goods_' . $page_size . '_' . $page . '_' . $cate, 1000)->select();
             $url = url('userCase/detail') . '?id=';
             foreach ($data as &$v) {
                 $v['img'] = img($v['img']);
@@ -35,7 +35,34 @@ class Goods extends Base
         $this->assign('cateList', $cateList);
         return $this->fetch();
     }
-
+    public function  order(){
+        if(request()->isAjax()){
+            $data=input('post.');
+            $insert['goods_id']=(int)$data['goods_id'];
+            $goods = C::where('id', $insert['goods_id'])->cache('userCase_detail_' . $insert['goods_id'], 3600)->find();
+            if(!$goods){
+                return $this->return_msg('预约错误',2);
+            }
+            $arr=[];
+            if(count($data['name'])>0){
+                foreach ($data['name'] as $k=>$v){
+                    $arr[$v]=$data['field'][$k];
+                }
+            }
+            $insert['goods_content']=$goods['desc'];
+            $insert['user_id']=$this->user['id'];
+            $insert['money']=$goods['price'];
+            $insert['order_no']=date("YmdHis").mt_rand(100000,999999);
+            $insert['form_content']=json_encode($arr,true);
+            $insert['status']=1;
+            $insert['create_time']=$insert['update_time']=time();
+            $res=DB::name('order')->insert($insert);
+            if($res){
+                return $this->return_msg('预约成功',0);
+            }
+            return $this->return_msg('预约错误',2);
+        }
+    }
 
     public function detail()
     {

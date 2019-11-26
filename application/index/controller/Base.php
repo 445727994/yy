@@ -14,8 +14,8 @@ class Base extends Controller
     {
         header("Content-type:text/html;charset=utf-8");
         parent::__construct();
-//        $user = Db::name("user")->find();
-//        session('user', $user);
+        $user = Db::name("user")->find();
+        session('user', $user);
         $this->user = session('user');
         if (empty($this->user)) {
             $this->redirect("WechatUser/index");
