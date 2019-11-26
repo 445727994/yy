@@ -44,7 +44,7 @@ class userCase extends Base
         if ($id) {
             $data = C::where('id', $id)->where('is_show', 0)->cache('userCase_detail_' . $id, 3600)->find();
         } else {
-            $data = C::order('sort desc')->cache('camera_default', 3600)->find();
+            $data = C::order('sort desc')->cache('case_default', 3600)->find();
         }
         $this->assign('userCase', $data);
         return $this->fetch();
