@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46a1fc7-1e28-4b97-8857-17f358801b4b" name="Default Changelist" comment="去掉默认用户">
+    <list default="true" id="f46a1fc7-1e28-4b97-8857-17f358801b4b" name="Default Changelist" comment="订单完善">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/about/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/about/edit.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,10 +32,13 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sls" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\myproject\yy\vendor\yhcbd\yhcbd\src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="I:\myproject\yy\config" />
       <recent name="I:\myproject\yy\application\index\controller" />
@@ -77,7 +81,17 @@
       <workItem from="1572527213193" duration="9847000" />
       <workItem from="1572613185628" duration="1869000" />
       <workItem from="1572689614797" duration="17233000" />
-      <workItem from="1572744665388" duration="30827000" />
+      <workItem from="1572744665388" duration="31123000" />
+      <workItem from="1572959477711" duration="3816000" />
+      <workItem from="1573044459541" duration="1855000" />
+      <workItem from="1573126138440" duration="7000" />
+      <workItem from="1573129109895" duration="6580000" />
+      <workItem from="1573216674307" duration="402000" />
+      <workItem from="1573297215130" duration="2741000" />
+      <workItem from="1573375853119" duration="5198000" />
+      <workItem from="1573901063165" duration="583000" />
+      <workItem from="1573967588474" duration="581000" />
+      <workItem from="1574772136241" duration="11739000" />
     </task>
     <task id="LOCAL-00001" summary="预约系统  除订单外开发">
       <created>1572778428267</created>
@@ -149,7 +163,35 @@
       <option name="project" value="LOCAL" />
       <updated>1572792796996</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="去掉默认用户">
+      <created>1572793127862</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1572793127862</updated>
+    </task>
+    <task id="LOCAL-00012" summary="去掉默认用户">
+      <created>1572793211531</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1572793211531</updated>
+    </task>
+    <task id="LOCAL-00013" summary="订单完善">
+      <created>1574785605542</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1574785605542</updated>
+    </task>
+    <task id="LOCAL-00014" summary="订单完善">
+      <created>1574785767911</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1574785767911</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +213,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="预约系统  除订单外开发" />
     <MESSAGE value="去掉默认用户" />
-    <option name="LAST_COMMIT_MESSAGE" value="去掉默认用户" />
+    <MESSAGE value="订单完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="订单完善" />
   </component>
 </project>
