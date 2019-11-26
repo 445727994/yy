@@ -39,7 +39,7 @@ class Goods extends Base
         if(request()->isAjax()){
             $data=input('post.');
             $insert['goods_id']=(int)$data['goods_id'];
-            $goods = C::where('id', $insert['goods_id'])->cache('userCase_detail_' . $insert['goods_id'], 3600)->find();
+            $goods = C::where('id', $insert['goods_id'])->cache('goods_detail_' . $insert['goods_id'], 3600)->find();
             if(!$goods){
                 return $this->return_msg('预约错误',2);
             }
@@ -69,7 +69,7 @@ class Goods extends Base
         $this->webtitle('摄影师详情');
         $id = input('id');
         if ($id) {
-            $data = C::where('id', $id)->where('is_show', 0)->cache('userCase_detail_' . $id, 3600)->find();
+            $data = C::where('id', $id)->where('is_show', 0)->cache('goods_detail_' . $id, 3600)->find();
         } else {
             $data = C::order('sort desc')->cache('camera_default', 3600)->find();
         }
@@ -85,7 +85,7 @@ class Goods extends Base
             $this->redirect('goods/index');
             return;
         }
-        $data = C::where('id', $id)->where('is_show', 0)->cache('userCase_detail_' . $id, 3600)->find();
+        $data = C::where('id', $id)->where('is_show', 0)->cache('goods_detail_' . $id, 3600)->find();
         $field=Form::find($data['form_id']);
         $this->assign('goods',$data);
         $this->assign('field',json_decode($field['content'],true));
