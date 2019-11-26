@@ -22,7 +22,7 @@ function position($id){
     return  Db::name('position')->where('id=' . $id)->cache('position_' . $id, '6000')->value('name');
 }
 function form($id){
-    return  Db::name('form')->where('id=' . $id)->cache('position_' . $id, '6000')->value('name');
+    return  Db::name('form')->where('id=' . $id)->cache('form_' . $id, '6000')->value('name');
 }
 function username($id){
     return  Db::name('user')->where('id=' . $id)->cache('username_' . $id, '6000')->value('username');
@@ -100,7 +100,7 @@ function adv($position)
     $adv = Db::name('adv')->where(['position' => $position])->cache('adv_' . $position, '6000')->select();
     if ($adv) {
         foreach ($adv as $k => &$v) {
-            $v['img'] = img($v['id']);
+            $v['img'] = img($v['img']);
         }
     }
     return $adv;
